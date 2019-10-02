@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import MenuNav from "./components/Main";
 import Main from "./components/Main";
 
 function App() {

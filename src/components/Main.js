@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import MenuNav from "./Menu";
-import MenuBox from "../assets/menu-styles";
+// import MenuBox from "../assets/menu-styles";
 
 class Main extends Component {
     // constructor(props){
