@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b41e5118-4161-4c0a-b50c-393da91f97ad" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/components/Burger.js" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/components/Test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/hamburger-button.js" afterDir="false" />
+>>>>>>> e5a3418d3d9c87f49c23b507cc5e9ee988a30030
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Main.js" afterDir="false" />
+>>>>>>> e5a3418d3d9c87f49c23b507cc5e9ee988a30030
       <change beforePath="$PROJECT_DIR$/src/components/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,11 +43,12 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/react-sidenav-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_interpreter_path" value="$APPLICATION_CONFIG_DIR$/node/node-v10.16.0-win-x64/node" />
+    <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Color Scheme Font" />
   </component>
@@ -87,9 +98,15 @@
       <option name="presentableId" value="Default" />
       <updated>1569874077378</updated>
       <workItem from="1569874078691" duration="1507000" />
+<<<<<<< HEAD
       <workItem from="1569876323194" duration="2446000" />
       <workItem from="1569954670286" duration="6195000" />
       <workItem from="1570029944191" duration="456000" />
+=======
+      <workItem from="1569876323194" duration="2147000" />
+      <workItem from="1569909974933" duration="2379000" />
+      <workItem from="1570018587358" duration="2166000" />
+>>>>>>> e5a3418d3d9c87f49c23b507cc5e9ee988a30030
     </task>
     <servers />
   </component>

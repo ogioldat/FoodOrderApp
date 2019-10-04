@@ -1,13 +1,29 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
-import MenuNav from "./components/Main";
-import Main from "./components/Main";
+import { ThemeProvider } from "styled-components";
+import { GlobalStyles } from './layout/global'
+import { theme } from './layout/theme'
+import { Burger, Menu } from './components'
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+import Test from './components/Test'
+import Burgers from './components/pages/burgers/Burgers'
 
 function App() {
+    const [open,setOpen] = useState(false);
+
   return (
-    <div className="App">
-      <Main> </Main>
-    </div>
+      <Router>
+              <Route exact path="/" component={Test} />
+              <Route path="/burgers" component={Burgers} />
+
+        <ThemeProvider theme={theme} >
+            <>
+                <GlobalStyles/>
+                <Menu open={open} setOpen={setOpen} > </Menu>
+                <Burger open={open} setOpen={setOpen} > </Burger>
+            </>
+        </ThemeProvider>
+      </Router>
   );
 }
 
