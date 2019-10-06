@@ -1,26 +1,60 @@
-import React, {Component} from 'react';
-import { Jumbotron, Button } from 'reactstrap';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import Header from "../header";
+import {StyledBurgers} from "./Burgers.styled";
+import Product from "../navs/product/Product";
+import OrderBar from "../navs/order-bar/OrderBar";
 
-class Burgers extends Component {
-    render() {
-        return (
-            <>
-                <Header> </Header>
-                <Jumbotron >
-                    <h1 className="display-3">Hello, world!</h1>
-                    <p className="lead">This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to featured content or information.</p>
-                    <hr className="my-2" />
-                    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                    <p className="lead">
-                        <Button color="primary">Learn More</Button>
-                    </p>
-                </Jumbotron>
 
-            </>
-        );
-    }
-}
+const Burgers = ({orders,inOrder,products}) => {
+
+    const addToOrder = (details) => {
+        details.counter++;
+        if(details.counter !== 0){
+            inOrder(orders => [...orders,details]);
+            // if(!orders.includes(details)){
+            //     inOrder(orders => [...orders,details]);
+            // } else {
+            //     inOrder(prev => [...prev]);
+            // }
+        }
+    };
+
+    const decrement = (order) => {
+        if(order.counter > 1 ) {
+            order.counter--;
+        }
+        else {
+            inOrder(orders.filter(o => o!==order));
+        }
+        inOrder(prev => [...prev]);
+    };
+
+
+    return (
+        <>
+            <StyledBurgers>
+                <section>
+                    <h1>Na co masz dzisiaj ochotę?  </h1>
+                </section>
+                <main>
+                    {
+                        products.map(product => <Product
+                                addToOrder={addToOrder}
+                                key={product.id}
+                                orders={orders}
+                                details={product}/>)}
+
+                </main>
+                <OrderBar
+                    orders={orders}
+                    decrement={decrement}
+                >
+                </OrderBar>
+
+            </StyledBurgers>
+
+        </>
+    )
+};
 
 export default Burgers;
