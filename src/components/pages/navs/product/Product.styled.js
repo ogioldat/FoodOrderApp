@@ -19,7 +19,7 @@ export const StyledProduct = styled.div`
     transition: box-shadow .5s,transform .2s;
     
     :hover {
-        box-shadow: 0 0 20px 10px rgba(0,0,0,.17);
+        box-shadow: 0 0 20px 10px rgba(0,0,0,.35);
         transform:scale(1.015);
         cursor:pointer;
     }

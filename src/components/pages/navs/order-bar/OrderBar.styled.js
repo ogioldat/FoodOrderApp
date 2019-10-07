@@ -53,8 +53,10 @@ export const StyledOrderBar = styled.footer`
   transform: rotate(90deg);
     align-self:center;
     display:flex;
-    margin:1rem 0;
+    margin:.5rem 0;
     flex-direction:column;
+    min-width:15rem;
+    
   }
   
   .gap {
@@ -63,14 +65,9 @@ export const StyledOrderBar = styled.footer`
     margin-left:1rem;
   }
   
-  #overflow-div div:hover {
-        background:rgba(0,0,0,.1);
-        cursor:pointer;
-    }
   
   a {
     transform: rotate(-90deg);
-    // margin:4rem 0;
   }
   
   
@@ -81,7 +78,8 @@ export const StyledOrderBar = styled.footer`
     position:absolute;
     width:15vw;
     height:80px;
-=    z-index:2;
+    background:blue;
+    z-index:2;
     background:linear-gradient(90deg,white 70%,transparent)
   }
   
@@ -118,10 +116,10 @@ export const AddedOrder = styled.div`
     
     user-select: none; 
    
-    // :hover {
-    //     background:rgba(0,0,0,.1);
-    //     cursor:pointer;
-    // }
+    :hover {
+        background:rgba(0,0,0,.3);
+        cursor:pointer;
+    }
 
     
     div {
@@ -135,7 +133,7 @@ export const AddedOrder = styled.div`
         width:3rem;
         height:3rem;
         border-radius:50%;
-        transform: rotate(-90deg);
+        transform: rotate(90deg);
     }
     
     p {

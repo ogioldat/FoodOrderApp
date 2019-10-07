@@ -3,5 +3,5 @@ export const theme = {
     primaryLight: '#efefef',
     primaryHover: '#ffa153 !important',
     mobile: '576px',
-    shadow: '0 0 15px 10px rgba(0,0,0,.05)'
+    shadow: '0 0 15px 10px rgba(0,0,0,.25)'
 };

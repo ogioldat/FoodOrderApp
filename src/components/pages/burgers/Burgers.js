@@ -3,19 +3,31 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {StyledBurgers} from "./Burgers.styled";
 import Product from "../navs/product/Product";
 import OrderBar from "../navs/order-bar/OrderBar";
+import axios from "axios";
 
+const Burgers = ({orders,inOrder,query}) => {
+    const [products,setProducts] = useState([]);
+    const data = (endpoint) => {
+        axios
+            .get(`http://192.168.50.40:8080/api/food/${endpoint}`)
+            .then(res => {
+                let readyData = res.data;
+                for(let i of readyData) i.counter = 0;
+                setProducts(readyData);
+            })
+            .catch(err => {console.log(err)})
+    };
 
-const Burgers = ({orders,inOrder,products}) => {
+    useEffect(() => {data(query)},[]);
 
     const addToOrder = (details) => {
         details.counter++;
         if(details.counter !== 0){
-            inOrder(orders => [...orders,details]);
-            // if(!orders.includes(details)){
-            //     inOrder(orders => [...orders,details]);
-            // } else {
-            //     inOrder(prev => [...prev]);
-            // }
+            if(!orders.includes(details)){
+                inOrder(orders => [...orders,details]);
+            } else {
+                inOrder(prev => [...prev]);
+            }
         }
     };
 

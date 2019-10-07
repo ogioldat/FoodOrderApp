@@ -12,18 +12,8 @@ import axios from "axios";
 function App() {
     const [open,setOpen] = useState(false);
     const [orders,inOrder] = useState([]);
-    const [products,setProducts] = useState([]);
 
-    useEffect(() => {
-        axios
-            .get('https://jsonplaceholder.typicode.com/photos')
-            .then(res => {
-                let readyData = res.data.slice(0,10);
-                for(let i of readyData) i.counter = 0;
-                setProducts(readyData);
-            })
-            .catch(err => {console.log(err)})
-    },[]);
+    //
 
   return (
           <Router>
@@ -35,16 +25,34 @@ function App() {
                           <Burger open={open} setOpen={setOpen} > </Burger>
                       </div>
                   </>
-
                   <Route exact path="/" component={() =>
                       <Burgers orders={orders}
-                        inOrder={inOrder}
-                        products={products}
-                        // amount={amount}
-                        // setAmount={setAmount}
+                               inOrder={inOrder}
+                               query={'burgers'}
                       />}
                   />
-                  <Route path="/burgers" component={Burgers} />
+
+                  <Route exact path="/burgers" component={() =>
+                      <Burgers orders={orders}
+                        inOrder={inOrder}
+                        query={'burgers'}
+                      />}
+                  />
+
+                  <Route exact path="/drinks" component={() =>
+                      <Burgers orders={orders}
+                               inOrder={inOrder}
+                               query={'drinks'}
+                      />}
+                  />
+
+                  <Route exact path="/desserts" component={() =>
+                      <Burgers orders={orders}
+                               inOrder={inOrder}
+                               query={'desserts'}
+                      />}
+                  />
+
               </ThemeProvider>
           </Router>
   );

@@ -2,7 +2,10 @@ import React, {useState, useEffect} from 'react';
 import {StyledOrderBar, StyledBar, AddedOrder} from "./OrderBar.styled";
 import { Badge, Button } from 'reactstrap'
 
+
 const OrderBar = ({orders,decrement}) => {
+
+
 
     return (
         <>
@@ -10,14 +13,14 @@ const OrderBar = ({orders,decrement}) => {
                 <StyledBar>Twoje zamówienie</StyledBar>
                 <div id={'shader'}> </div>
                 <div id={'overflow-div'}>
-                {/*<div className="gap"> </div>*/}
                     {
                         orders.map(order => (
                                 <div key={order.id}>
                                     <AddedOrder onClick={() => decrement(order)}>
-                                        <img src={order.thumbnailUrl}  alt="kanapeczka"/>
+                                        <img src={"http://www.pngall.com/wp-content/uploads/2016/05/Burger-Free-Download-PNG.png"}
+                                             alt="kanapeczka"/>
                                         <div>
-                                            <p>{order.title.slice(0,8)}</p>
+                                            <p>{order.name}</p>
                                             <p id='quan'>ILOŚC:
                                                 <Badge color='dark'>{order.counter}</Badge></p>
                                         </div>
