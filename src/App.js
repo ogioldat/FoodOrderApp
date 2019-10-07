@@ -5,19 +5,34 @@ import { GlobalStyles } from './layout/global'
 import { theme } from './layout/theme'
 import { Burger, Menu } from './components'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import Burgers from './components/pages/burgers/Burgers'
+import Products from './components/pages/burgers/Products'
 import axios from "axios";
 
 
 function App() {
     const [open,setOpen] = useState(false);
     const [orders,inOrder] = useState([]);
+    const [products,setProducts] = useState([]);
+    const [request,setRequest] = useState('photos');
 
-    //
+    useEffect(() => {
+        axios
+            .get('https://jsonplaceholder.typicode.com/'+request)
+            .then(res => {
+                let readyData = res.data.slice(0,10);
+                for(let i of readyData) i.counter = 0;
+                setProducts(readyData);
+            })
+            .catch(err => {console.log(err)})
+    },[request]);
+
+    document.getElementsByTagName('body')[0]
+        .addEventListener('click', () => {setOpen(false)});
+
 
   return (
           <Router>
-              <ThemeProvider theme={theme} >
+              <ThemeProvider theme={theme}  >
                   <GlobalStyles/>
                   <>
                       <div>
@@ -26,30 +41,40 @@ function App() {
                       </div>
                   </>
                   <Route exact path="/" component={() =>
-                      <Burgers orders={orders}
-                               inOrder={inOrder}
-                               query={'burgers'}
+                      <Products orders={orders}
+                                inOrder={inOrder}
+                               // query={'burgers'}
                       />}
                   />
 
                   <Route exact path="/burgers" component={() =>
-                      <Burgers orders={orders}
-                        inOrder={inOrder}
-                        query={'burgers'}
+                      <Products orders={orders}
+                                inOrder={inOrder}
+                                products={products}
+                                query={'photos'}
+                                setRequest={setRequest}
+                                request={request}
+                                onClick={() => console.log('clicked')}
                       />}
                   />
 
                   <Route exact path="/drinks" component={() =>
-                      <Burgers orders={orders}
-                               inOrder={inOrder}
-                               query={'drinks'}
+                      <Products orders={orders}
+                                inOrder={inOrder}
+                                products={products}
+                                query={'photos'}
+                                setRequest={setRequest}
+                                request={request}
                       />}
                   />
 
                   <Route exact path="/desserts" component={() =>
-                      <Burgers orders={orders}
-                               inOrder={inOrder}
-                               query={'desserts'}
+                      <Products orders={orders}
+                                inOrder={inOrder}
+                                products={products}
+                                query={'photos'}
+                                setRequest={setRequest}
+                                request={request}
                       />}
                   />
 

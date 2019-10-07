@@ -1,1 +1,1 @@
-export { default } from './Burgers';
+export { default } from './Products';

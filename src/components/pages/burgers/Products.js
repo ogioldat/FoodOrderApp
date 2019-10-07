@@ -1,26 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {StyledBurgers} from "./Burgers.styled";
-import Product from "../navs/product/Product";
+import {StyledBurgers} from "./Products.styled";
+import ProductsSingle from "../navs/product/ProductsSingle";
 import OrderBar from "../navs/order-bar/OrderBar";
-import axios from "axios";
 
-const Burgers = ({orders,inOrder,query}) => {
-    const [products,setProducts] = useState([]);
-    const data = (endpoint) => {
-        axios
-            .get(`http://192.168.50.40:8080/api/food/${endpoint}`)
-            .then(res => {
-                let readyData = res.data;
-                for(let i of readyData) i.counter = 0;
-                setProducts(readyData);
-            })
-            .catch(err => {console.log(err)})
-    };
+const Products = ({orders,inOrder,query,products,setRequest}) => {
 
-    useEffect(() => {data(query)},[]);
+    setRequest(() => query);
 
     const addToOrder = (details) => {
+
         details.counter++;
         if(details.counter !== 0){
             if(!orders.includes(details)){
@@ -50,7 +39,7 @@ const Burgers = ({orders,inOrder,query}) => {
                 </section>
                 <main>
                     {
-                        products.map(product => <Product
+                        products.map(product => <ProductsSingle
                                 addToOrder={addToOrder}
                                 key={product.id}
                                 orders={orders}
@@ -69,4 +58,4 @@ const Burgers = ({orders,inOrder,query}) => {
     )
 };
 
-export default Burgers;
+export default Products;

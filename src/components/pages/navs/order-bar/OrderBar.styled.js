@@ -33,36 +33,18 @@ export const StyledOrderBar = styled.footer`
     flex-direction:column-reverse;
     align-items:center;
     justify-items:center;
-    height:90vw;
+    height:100vw;
     width:80px;
     min-width:80px;
-    min-height:90vw;
-        
+    min-height:90vw;  
     overflow-y: auto;
     overflow-x: hidden;
-    
     transform: rotate(90deg);
     transform-origin: right top;
-    
     position:absolute;
     right:0;
     top:100%;
     
-  }
-  #overflow-div div {
-  transform: rotate(90deg);
-    align-self:center;
-    display:flex;
-    margin:.5rem 0;
-    flex-direction:column;
-    min-width:15rem;
-    
-  }
-  
-  .gap {
-    width:80px;
-    height:1rem;
-    margin-left:1rem;
   }
   
   
@@ -88,6 +70,18 @@ export const StyledOrderBar = styled.footer`
     background:linear-gradient(-90deg,white 60%,transparent)
   }
   
+  #sep {
+    color:${({theme}) => theme.primaryDark};
+    transform:rotate(-90deg);
+    font-weight:lighter;
+    margin:0;
+  }
+  
+  .gap {
+    width:10rem;
+    min-height:15rem;
+  }
+  
   
 `;
 
@@ -107,17 +101,36 @@ export const StyledBar = styled.div`
 `;
 
 export const AddedOrder = styled.div`
-    margin-left:1rem;
-    display:flex;
-    align-items:center;
-    justify-content:center;
+    transform: rotate(-90deg);
+    position:relative
+    width:15rem;
+    height:80px;
+    // flex-direction:column;
     align-self:center;
-    color:#bbb;
+    display:flex;
+    transition:filter .8s,text-decoration .8s;
+    align-items:center;
+    justify-content:space-around;
+    margin:5rem 0;
     
+    
+
+    // margin-left:1rem;
+    // display:flex;
+    // align-items:center;
+    // justify-content:center;
+    // align-self:center;
+    color:#bbb;
     user-select: none; 
+    
+    :last-child{
+        background:green;
+    }
    
     :hover {
-        background:rgba(0,0,0,.3);
+        filter:grayscale(100%);
+        text-decoration: line-through;
+        text-decoration-color:red;
         cursor:pointer;
     }
 
@@ -133,17 +146,16 @@ export const AddedOrder = styled.div`
         width:3rem;
         height:3rem;
         border-radius:50%;
-        transform: rotate(90deg);
     }
     
     p {
         color:#212121;
-        margin: 2rem 0 0;
+        margin: 1rem 0 0;
         font-size:1.3rem;
     }
     
     #quan {
-        margin: 0 0 2rem;
+        margin: 0 0 1rem;
         font-size:.9rem;
     }
 `;
