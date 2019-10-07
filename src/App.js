@@ -8,6 +8,8 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Products from './components/pages/burgers/Products'
 import axios from "axios";
 
+//TODO:`Vegan badge, get Tkaczyk's data, style menu-bar, order finalization, POST request`
+
 
 function App() {
     const [open,setOpen] = useState(false);
