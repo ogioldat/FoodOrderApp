@@ -105,7 +105,6 @@ export const AddedOrder = styled.div`
     position:relative
     width:15rem;
     height:80px;
-    // flex-direction:column;
     align-self:center;
     display:flex;
     transition:filter .8s,text-decoration .8s;
@@ -113,19 +112,9 @@ export const AddedOrder = styled.div`
     justify-content:space-around;
     margin:5rem 0;
     
-    
-
-    // margin-left:1rem;
-    // display:flex;
-    // align-items:center;
-    // justify-content:center;
-    // align-self:center;
     color:#bbb;
     user-select: none; 
-    
-    :last-child{
-        background:green;
-    }
+
    
     :hover {
         filter:grayscale(100%);

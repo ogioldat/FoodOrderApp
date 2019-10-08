@@ -10,7 +10,6 @@ export const StyledProduct = styled.div`
     // border: .1rem solid ${({ theme }) => theme.primaryDark};  
     box-shadow: ${({theme}) => theme.shadow};
     margin: 1rem;
-    
     display:flex;
     align-items:center;
     text-align:center;
@@ -61,14 +60,18 @@ export const StyledProduct = styled.div`
     p{
         margin:0;
         padding:.5rem;
+        justify-self:center;
     }
     
     .description {
-        width: 80%;
+        // min-width:18rem;
+        // width:18rem;
         height: 1rem;
         text-align:center;
         display:flex;
         align-items:center;
+        margin:0 1rem;
+
     }
     
     .description:before,
@@ -79,6 +82,20 @@ export const StyledProduct = styled.div`
         background:${({ theme }) => theme.primaryDark};
         width:1.5rem;
         height:1px;
+    }
+    
+    .veganBadge {
+        margin:.5rem .5rem;
+        position:absolute;
+        align-self:flex-start;
+        width:2rem;
+        height:2rem!important;
+        min-height:2rem;
+        display:${(props) => props.isVegan ? null : 'none'};
+    }
+    
+    .size {
+        position:absolute;
     }
     
     

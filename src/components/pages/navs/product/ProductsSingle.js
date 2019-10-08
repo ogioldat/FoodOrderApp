@@ -1,15 +1,13 @@
 import React from 'react';
 import {StyledProduct} from "./ProductsSingle.styled";
 import { Badge, Button } from 'reactstrap'
+import veganLogo from '../../../../assets/images/veganLogo.jpg'
 
 const ProductsSingle = ({details,addToOrder}) => {
     return (
         <>
-            <StyledProduct>
-                <Badge color={'dark'}>{
-                    // details.size
-                    details.id
-                }</Badge>
+            <StyledProduct isVegan={details.isVegan}>
+                <img className={'veganBadge'} src={veganLogo} alt=""/>
                 <Button
                     onClick={() => addToOrder(details)}
                     id={'add-button'}>
@@ -33,6 +31,11 @@ const ProductsSingle = ({details,addToOrder}) => {
                         // details.description
                     }</p>
                 </div>
+                <Badge color={'dark'} className={'size'}>{
+                    // details.size
+                    details.id
+                }</Badge>
+
             </StyledProduct>
         </>
     )

@@ -5,10 +5,10 @@ import { GlobalStyles } from './layout/global'
 import { theme } from './layout/theme'
 import { Burger, Menu } from './components'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
-import Products from './components/pages/burgers/Products'
+import Products from './components/pages/product-site/Products'
 import axios from "axios";
 
-//TODO:`Vegan badge, get Tkaczyk's data, style menu-bar, order finalization, POST request`
+//TODO:`get Tkaczyk's data, style menu-bar, order finalization, POST request`
 
 
 function App() {
@@ -22,7 +22,10 @@ function App() {
             .get('https://jsonplaceholder.typicode.com/'+request)
             .then(res => {
                 let readyData = res.data.slice(0,10);
-                for(let i of readyData) i.counter = 0;
+                for(let i of readyData) {
+                    i.counter = 0;
+                    i.isVegan = true;
+                }
                 setProducts(readyData);
             })
             .catch(err => {console.log(err)})
@@ -45,7 +48,10 @@ function App() {
                   <Route exact path="/" component={() =>
                       <Products orders={orders}
                                 inOrder={inOrder}
-                               // query={'burgers'}
+                                products={products}
+                                query={'photos'}
+                                setRequest={setRequest}
+                                request={request}
                       />}
                   />
 
@@ -56,7 +62,6 @@ function App() {
                                 query={'photos'}
                                 setRequest={setRequest}
                                 request={request}
-                                onClick={() => console.log('clicked')}
                       />}
                   />
 

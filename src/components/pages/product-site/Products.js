@@ -51,7 +51,6 @@ const Products = ({orders,inOrder,query,products,setRequest}) => {
                     decrement={decrement}
                 >
                 </OrderBar>
-
             </StyledBurgers>
 
         </>
