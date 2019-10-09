@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {StyledBurgers} from "./Products.styled";
-import ProductsSingle from "../navs/product/ProductsSingle";
+import ProductsSingle from "./product/ProductsSingle";
 import OrderBar from "../navs/order-bar/OrderBar";
 
 const Products = ({orders,inOrder,query,products,setRequest}) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import {StyledOrderBar, StyledBar, AddedOrder} from "./OrderBar.styled";
 import { Badge, Button } from 'reactstrap'
-
+import { Link } from 'react-router-dom';
 
 const OrderBar = ({orders,decrement}) => {
 
@@ -24,7 +24,7 @@ const OrderBar = ({orders,decrement}) => {
                                                 <p id='quan'>ILOŚC:
                                                     <Badge color='dark'>{order.counter}</Badge></p>
                                             </div>
-                                            <Badge color={'primary'}>{order.id}zł</Badge>
+                                            <Badge color={'primary'}>{order.id*order.counter}zł</Badge>
                                         </AddedOrder>
                                         <p id="sep">|</p>
                                     </React.Fragment>
@@ -35,10 +35,15 @@ const OrderBar = ({orders,decrement}) => {
                 </div>
                 <div id={'shader-r'}> </div>
                 <Button
+                    // onClick={() => {wid}}
                     id='order-butt'
                     color={'primary'}
-                    onClick={() => {console.log(orders)}}>
-                    Zamów</Button>
+                    onClick={() => {window.location.pathname = '/order_finalisation'}}
+                >
+                    {/*<Link to={'/order_finalisation'}>*/}
+                        Zamów
+                    {/*</Link>*/}
+                </Button>
             </StyledOrderBar>
         </>
     )

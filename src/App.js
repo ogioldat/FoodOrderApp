@@ -6,6 +6,7 @@ import { theme } from './layout/theme'
 import { Burger, Menu } from './components'
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 import Products from './components/pages/product-site/Products'
+import OrderFinal from "./components/pages/order-page/OrderFinal";
 import axios from "axios";
 
 //TODO:`get Tkaczyk's data, style menu-bar, order finalization, POST request`
@@ -16,6 +17,8 @@ function App() {
     const [orders,inOrder] = useState([]);
     const [products,setProducts] = useState([]);
     const [request,setRequest] = useState('photos');
+
+    // console.log(orders);
 
     useEffect(() => {
         axios
@@ -32,7 +35,7 @@ function App() {
     },[request]);
 
     document.getElementsByTagName('body')[0]
-        .addEventListener('click', () => {setOpen(false)});
+        .addEventListener('click', () => {if(open) setOpen(!open)});
 
 
   return (
@@ -82,6 +85,16 @@ function App() {
                                 query={'photos'}
                                 setRequest={setRequest}
                                 request={request}
+                      />}
+                  />
+
+                  <Route exact path="/order_finalisation" component={() =>
+                      <OrderFinal orders={orders}
+                                  inOrder={inOrder}
+                                  products={products}
+                                  query={'photos'}
+                                  setRequest={setRequest}
+                                  request={request}
                       />}
                   />
 
