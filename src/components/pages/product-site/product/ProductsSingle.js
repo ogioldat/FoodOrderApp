@@ -7,7 +7,7 @@ const ProductsSingle = ({details,addToOrder}) => {
     return (
         <>
             <StyledProduct isVegan={details.isVegan}>
-                <img className={'veganBadge'} src={veganLogo} alt=""/>
+
                 <Button
                     onClick={() => addToOrder(details)}
                     id={'add-button'}>
@@ -35,6 +35,10 @@ const ProductsSingle = ({details,addToOrder}) => {
                     // details.size
                     details.id
                 }</Badge>
+                <span className={'veganBadge'}>
+                    <p>Vegan!
+                    </p>
+                </span>
 
             </StyledProduct>
         </>

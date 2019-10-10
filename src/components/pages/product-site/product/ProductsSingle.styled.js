@@ -85,13 +85,19 @@ export const StyledProduct = styled.div`
     }
     
     .veganBadge {
-        margin:.5rem .5rem;
         position:absolute;
-        align-self:flex-start;
-        width:2rem;
-        height:2rem!important;
-        min-height:2rem;
+        background:#13a72c;
+        color:white;
+        font-weight:lighter;
+        letter-spacing:.01rem;
+        width:5rem;
         display:${(props) => props.isVegan ? null : 'none'};
+        border-radius: 0 0 .3rem .3rem;
+        
+        p {
+            padding:.1rem .3rem;
+        }
+    
     }
     
     .size {
