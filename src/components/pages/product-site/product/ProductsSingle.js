@@ -12,28 +12,28 @@ const ProductsSingle = ({details,addToOrder}) => {
                     onClick={() => addToOrder(details)}
                     id={'add-button'}>
                     +</Button>
-                <img src={details.thumbnailUrl}
+                <img src={details.imageUrl}
                      alt="food"/>
                 <div id={'name-price'}>
                     <h2>{
                         // details.name
-                        details.title.slice(0,10)
+                        details.name
                     }</h2>
                     <Badge color='dark'>{
-                        details.id
+                        details.price
                         // details.price
                     }zł</Badge>
                 </div>
 
                 <div className={'description'}>
                     <p>{
-                        details.title
+                        details.description
                         // details.description
                     }</p>
                 </div>
                 <Badge color={'dark'} className={'size'}>{
                     // details.size
-                    details.id
+                    details.size
                 }</Badge>
                 <span className={'veganBadge'}>
                     <p>Vegan!

@@ -85,6 +85,7 @@ export const StyledProduct = styled.div`
     }
     
     .veganBadge {
+        margin-left:-5rem;
         position:absolute;
         background:#13a72c;
         color:white;

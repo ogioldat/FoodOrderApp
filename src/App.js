@@ -22,12 +22,11 @@ function App() {
 
     useEffect(() => {
         axios
-            .get('https://jsonplaceholder.typicode.com/'+request)
+            .get('http://192.168.50.40:8080/api/food/'+request)
             .then(res => {
                 let readyData = res.data.slice(0,10);
                 for(let i of readyData) {
                     i.counter = 0;
-                    i.isVegan = true;
                 }
                 setProducts(readyData);
             })
@@ -37,6 +36,7 @@ function App() {
     document.getElementsByTagName('body')[0]
         .addEventListener('click', () => {if(open) setOpen(!open)});
 
+    console.log(products);
 
   return (
           <Router>
@@ -62,7 +62,7 @@ function App() {
                       <Products orders={orders}
                                 inOrder={inOrder}
                                 products={products}
-                                query={'photos'}
+                                query={'burgers'}
                                 setRequest={setRequest}
                                 request={request}
                       />}
@@ -72,7 +72,7 @@ function App() {
                       <Products orders={orders}
                                 inOrder={inOrder}
                                 products={products}
-                                query={'photos'}
+                                query={'drinks'}
                                 setRequest={setRequest}
                                 request={request}
                       />}
@@ -82,7 +82,7 @@ function App() {
                       <Products orders={orders}
                                 inOrder={inOrder}
                                 products={products}
-                                query={'photos'}
+                                query={'desserts'}
                                 setRequest={setRequest}
                                 request={request}
                       />}

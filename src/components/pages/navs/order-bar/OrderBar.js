@@ -17,14 +17,14 @@ const OrderBar = ({orders,decrement}) => {
                                     <React.Fragment key={order.id}>
 
                                         <AddedOrder onClick={() => decrement(order)}>
-                                            <img src={"http://www.pngall.com/wp-content/uploads/2016/05/Burger-Free-Download-PNG.png"}
+                                            <img src={order.imageUrl}
                                                  alt="kanapeczka"/>
                                             <div>
-                                                <p>{order.title.slice(0,10)}</p>
+                                                <p>{order.name}</p>
                                                 <p id='quan'>ILOŚC:
                                                     <Badge color='dark'>{order.counter}</Badge></p>
                                             </div>
-                                            <Badge color={'primary'}>{order.id*order.counter}zł</Badge>
+                                            <Badge color={'primary'}>{order.price*order.counter}zł</Badge>
                                         </AddedOrder>
                                         <p id="sep">|</p>
                                     </React.Fragment>
