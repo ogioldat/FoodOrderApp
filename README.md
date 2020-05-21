@@ -11,6 +11,6 @@ displays it in certain order.
 
 ### Contribution
 ```
-  Cretad in conntribution with my friend
+  Cretad in contribution with my friend
 ```
 - [ChromeGG](https://github.com/ChromeGG)
